@@ -1,5 +1,7 @@
 server:
-  port: 9091
+  port: 8080
+  servlet:
+    context-path: /api/v1/issues-tracking-system
 
 github:
   issues-detail-url: https://api.github.com/repos/kenshoo/python-style-guide/issues?rename=pr_key:pull_request.url,reported_by:user.login,developer:assignee.login,release:milestone.title&select=-ends_with(%22url%22),-starts_with(%22user%22),-starts_with(%22assignee%22),-starts_with(%22milestone%22),-title&mutate=created_at:ymd_hms(created_at),closed_at:ymd_hms(closed_at)&filter=state:closed,!is.na(pr_key)&mutate=age:as.numeric(closed_at%20-%20created_at,%20units%20=%20%22days%22)&group_by=developer&summarize=age_average:mean(age),counts:n()
