@@ -25,7 +25,7 @@ public class GitHubIssuesImplementation implements GitHubIssuesService {
             gitHubIssues.add(gitHubIssue);
         });
         this.gitHubIssuesRepository.saveAll(gitHubIssues);
-        return gitHubIssues;
+        return  gitHubIssues;
     }
 
     @Override
